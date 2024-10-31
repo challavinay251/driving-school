@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driving School Sessions</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        /* Session Card Styles */
+        .session {
+            background-color: #fff;
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-bottom: 30px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .session:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .session h2 {
+            font-size: 26px;
+            color: #3b5998;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .session p {
+            font-size: 16px;
+            line-height: 1.7;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .session img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .session img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .session button {
+            background: linear-gradient(135deg, #4CAF50, #66BB6A);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 50px;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 10px rgba(76, 175, 80, 0.4);
+        }
+
+        .session button:hover {
+            background: linear-gradient(135deg, #45a049, #5cae5e);
+            box-shadow: 0 8px 16px rgba(76, 175, 80, 0.5);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .session h2 {
+                font-size: 22px;
+            }
+            .session p {
+                font-size: 14px;
+            }
+            .session button {
+                font-size: 14px;
+                padding: 10px 20px;
+            }
+        }
+
+        /* Button and link styles */
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Early Morning Session -->
+    <div class="session">
+        <h2>Early Morning Session</h2>
+        <a href="{% url 'interest_form' 'Early Morning' %}">
+            <img src="/static/images/earlymorning.jpg" alt="early_morning">
+        </a>
+        <p>This session is perfect for early risers who want to experience driving on quieter roads. It's ideal for beginners who want a calm environment to learn the basics of driving.</p>
+        <p>Session Timing: 6:00 AM - 8:00 AM</p>
+        <a href="{% url 'interest_form' 'Early Morning' %}">
+            <button>I'm Interested</button>
+        </a>
+    </div>
+
+    <!-- Day Session -->
+    <div class="session">
+        <h2>Day Session</h2>
+        <a href="{% url 'interest_form' 'Day' %}">
+            <img src="/static/images/daytime.jpg" alt="day_time">
+        </a>
+        <p>The day session provides an opportunity to drive during regular traffic hours. This session helps learners get comfortable with busier roads, traffic signals, and other road users.</p>
+        <p>Session Timing: 10:00 AM - 2:00 PM</p>
+        <a href="{% url 'interest_form' 'Day' %}">
+            <button>I'm Interested</button>
+        </a>
+    </div>
+
+    <!-- Night Session -->
+    <div class="session">
+        <h2>Night Session</h2>
+        <a href="{% url 'interest_form' 'Night' %}">
+            <img src="/static/images/nighttime.jpg" alt="night_time">
+        </a>
+        <p>Night driving requires special skills, and this session is designed for learners who want to practice driving in low light conditions. It's perfect for those who need to build confidence driving after sunset.</p>
+        <p>Session Timing: 7:00 PM - 9:00 PM</p>
+        <a href="{% url 'interest_form' 'Night' %}">
+            <button>I'm Interested</button>
+        </a>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XYZ Driving School</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+    /* General Styles */
+    body {
+        font-family: 'Poppins', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: black;
+        color: white;
+    }
+
+    nav {
+        background-color: #1d1f21;
+        color: #fff;
+        padding: 15px 0;
+        text-align: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    nav a {
+        color: #fff;
+        text-decoration: none;
+        margin: 0 15px;
+        padding: 10px 20px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    nav a:hover {
+        background-color: #444;
+        transform: scale(1.05);
+    }
+
+    header {
+        background-color: #333;
+        color: #fff;
+        padding: 40px 20px;
+        text-align: center;
+        position: relative;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .header-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .logo {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+
+    .logo:hover {
+        transform: scale(1.1);
+    }
+
+    header h1 {
+        flex-grow: 1;
+        text-align: center;
+        font-size: 36px;
+        font-weight: 600;
+        margin: 0;
+        color: #f1c40f;
+    }
+
+    /* Section Styling */
+    section {
+        padding: 60px 20px;
+        margin-top: 50px;
+        background-color: black;
+        color: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        margin-bottom: 40px;
+    }
+    h2 {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 28px;
+    font-weight: 600;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+h2:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+
+    p {
+        font-size: 18px;
+        line-height: 1.7;
+        color: white;
+    }
+
+    /* Image Gallery */
+    .image-gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 20px 0;
+        gap: 15px;
+    }
+
+    .image-gallery img {
+        width: 200px;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .image-gallery img:hover {
+        transform: scale(1.1);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Trainer Section */
+    .trainer-card {
+        border: 1px solid #ddd;
+        padding: 25px;
+        margin: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        transition: box-shadow 0.3s ease;
+        background-color: black;
+    }
+
+    .trainer-card:hover {
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    }
+
+    .trainer-card img {
+        width: 100%;
+        max-width: 200px;
+        margin-bottom: 15px;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    h3 {
+        font-size: 22px;
+        color: cyan;
+    }
+
+    button {
+        background-color: #27ae60;
+        color: white;
+        border: none;
+        padding: 12px 30px;
+        cursor: pointer;
+        border-radius: 5px;
+        font-size: 16px;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    button:hover {
+        background-color: #2ecc71;
+        transform: scale(1.05);
+    }
+    /* Offer Section */
+    .offer-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        margin-top: 30px;
+    }
+
+    .offer-section img {
+        width: 320px;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .offer-section img:hover {
+        transform: scale(1.1);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Home Section with Background Image */
+#home {
+    background-image: url('/static/images/car.jpg'); /* Path to your image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white; /* Text color contrast with background */
+    padding: 60px 20px; /* Add some padding */
+    position: relative; /* For any positioning needs */
+    text-align: left; /* Aligning the text */
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.6); /* Add a semi-transparent overlay */
+    overflow: hidden; /* Ensure child elements don't overflow */
+}
+
+/* Add a pseudo-element to create a blurred background effect */
+#home::before {
+    content: '';
+    position: absolute; /* Position it absolutely */
+    top: 0; /* Align it to the top */
+    left: 0; /* Align it to the left */
+    right: 0; /* Extend to the right */
+    bottom: 0; /* Extend to the bottom */
+    background-image: url('/static/images/car.jpg'); /* Path to your image */
+    background-size: cover;
+    background-position: center;
+    filter: blur(8px); /* Adjust blur level (8px is just an example) */
+    z-index: 0; /* Place behind other content */
+}
+
+/* Adjust text and other content to be on top of the blurred background */
+#home h2 {
+    font-size: 34px;
+    color: #fff;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5); /* To make text more readable */
+    position: relative; /* Position it relative to stack on top */
+    z-index: 1; /* Bring it above the blur */
+}
+
+#home ul {
+    list-style-type: disc; /* Use default bullet points */
+    margin-left: 20px; /* Indentation for the list */
+    padding-left: 0;
+    position: relative; /* Position it relative to stack on top */
+    z-index: 1; /* Bring it above the blur */
+}
+
+#home ul li {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 10px;
+    color: whitesmoke;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5); /* Make bullet points readable on the background */
+    position: relative; /* Position it relative to stack on top */
+    z-index: 1; /* Bring it above the blur */
+}
+
+
+    /* Footer */
+    .footer {
+        background-color: #2c3e50;
+        color: white;
+        padding: 30px;
+        text-align: center;
+        font-size: 16px;
+        margin-top: 40px;
+        box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        header h1 {
+            font-size: 28px;
+        }
+
+        p {
+            font-size: 16px;
+        }
+
+        .image-gallery img {
+            width: 150px;
+        }
+
+        .offer-section {
+            flex-direction: column;
+        }
+
+        .offer-section img {
+            width: 250px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        header h1 {
+            font-size: 24px;
+        }
+
+        p {
+            font-size: 14px;
+        }
+    }
+</style>
+
+</head>
+<body>
+    <header>
+    <div class="header-content">
+        <a href="#home">
+            <img src="/static/images/lessons.jpg" alt="XYZ Driving School Logo" class="logo">
+        </a>
+        <h1>XYZ Driving School</h1>
+    </div>
+    </header>
+    <!-- Navigation Bar -->
+    <nav>
+
+        <a href="#home" class="active">Home</a>
+         <a href="#offer">What We Offer</a>
+         <a href="#trainer">Trainers</a>
+        <a href="#real-time-images">Real-Time Images</a>
+        <a href="#address">Address</a>
+        <a href="#contact">Contact Info</a>
+
+    </nav>
+    <!-- Header Section -->
+   <section id="home">
+    <h2>Welcome to XYZ Driving School</h2>
+    <ul>
+        <li><strong>10 years of experience</strong> in providing top-notch driving education in Hyderabad.</li>
+        <li>Successfully trained over <strong>1,000 students</strong> to become confident and safe drivers.</li>
+        <li><strong>Government-certified</strong> driving school with fully licensed instructors.</li>
+        <li><strong>Committed to women's safety</strong> with specialized lessons focusing on security and safe driving practices for women.</li>
+        <li>One of the <strong>most trusted driving schools</strong> in Hyderabad, known for quality education and reliability.</li>
+        <li>Emphasis on road safety, ensuring students are prepared for a lifetime of safe driving.</li>
+        <li>Special offers for students, senior citizens, and corporate groups with discounted lesson packages.</li>
+    </ul>
+</section>
+
+    <!-- Offer Section -->
+    <section id="offer">
+        <h2>What We Offer</h2>
+        <p>We offer a variety of driving lessons for all skill levels, with professional instructors and modern cars.</p>
+
+        <!-- Links to Driving Lessons and License -->
+        <div class="offer-section">
+            <a href="/driving-lessons/">
+                <img src="/static/images/lessons.jpg" alt="Driving Lessons">
+            </a>
+            <a href="/lesson-license/">
+                <img src="/static/images/lessonsandlicense.jpg" alt="Lessons and License">
+            </a>
+        </div>
+    </section>
+
+    <!-- Trainer Section -->
+    <section id="trainer">
+        <h2>Trainers</h2>
+
+        {% for trainers in trainers %}
+        <div class="trainer-card">
+            <img src="{{ trainers.photo.url }}" alt="{{ trainers.name }}">
+            <h3>{{ trainers.name }}</h3>
+            <p><strong>Age:</strong> {{ trainers.age }}</p>
+            <p><strong>Experience:</strong> {{ trainers.experience }} years</p>
+            <p><strong>About:</strong> {{ trainers.about }}</p>
+            <p><strong>Registration No.:</strong> {{ trainers.reg_no }}</p>
+
+            <h4>Reviews</h4>
+            <div class="reviews">
+                {% for review in trainers.reviews.all %}
+                    <p><strong>{{ review.user_name }}:</strong> {{ review.review_text }} (Rating: {{ review.rating }}/5)</p>
+                {% empty %}
+                    <p>No reviews yet. Be the first to review!</p>
+                {% endfor %}
+            </div>
+
+            <a href="{% url 'add_review' trainers.id %}">
+                <button>Add a Review</button>
+            </a>
+        </div>
+        {% endfor %}
+    </section>
+
+    <!-- Real-Time Images Section -->
+    <section id="real-time-images">
+        <h2>Real-Time Images</h2>
+        <div class="image-gallery">
+            {% for image in images %}
+                <img src="{{ image.image.url }}" alt="Real-time image" style="width: 200px; height: auto;" />
+            {% endfor %}
+        </div>
+    </section>
+
+    <!-- Address Section -->
+    <section id="address">
+        <h2>Address</h2>
+        <p> R.no X Banjara hills</p><p> Hyderabad </p> <p> 5000XX </p> <p>Telangana, India </p>
+        <p>Location:
+            <a href="https://www.google.com/maps/place/123+Main+Street,+Hyderabad" target="_blank">View on Google Maps</a>
+        </p>
+    </section>
+
+    <!-- Contact Info Section -->
+    <section id="contact">
+        <h2>Contact Info</h2>
+        <p>Contact Info: +91 630XXXXXXX </p>
+        <p>Email Id: xyzdrivingschool@gmail.com </p>
+    </section>
+
+
+    <!-- Footer Section -->
+    <div class="footer">
+        XYZ Driving School | Banjara hills , Hyderabad | Contact: +91 630XXXXXXX
+    </div>
+
+</body>
+</html>

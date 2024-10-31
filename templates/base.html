@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}XYZ Driving School & Blog{% endblock %}</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            background-color: #3b5998;
+            overflow: hidden;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .navbar a:hover {
+            background-color: #2d88ff;
+        }
+
+        .navbar a.active {
+            background-color: #1e3a75;
+        }
+
+        /* Footer section for address & contact */
+        .footer {
+            background-color: #3b5998;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 16px;
+            margin-top: 40px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 28px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 24px;
+            }
+
+            p {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="{% url 'home' %}" class="active">Home</a>
+        <a href="#real-time-images">Real-Time Images</a>
+        <a href="#address">Address</a>
+        <a href="#offer">What We Offer</a>
+        <a href="#contact">Contact Info</a>
+        <a href="#trainer">Trainers</a>
+    </div>
+
+    <!-- Dynamic content block -->
+    <div>
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <!-- Footer Section -->
+    <div class="footer">
+        XYZ Driving School | 123 Main Street, Hyderabad | Contact: (123) 456-7890
+    </div>
+
+</body>
+</html>

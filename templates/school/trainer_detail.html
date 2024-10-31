@@ -1,0 +1,19 @@
+<h1>{{ trainer.name }}</h1>
+<p><strong>Age:</strong> {{ trainer.age }}</p>
+<p><strong>Experience:</strong> {{ trainer.experience }} years</p>
+<p><strong>Registration No.:</strong> {{ trainer.reg_no }}</p>
+<p><strong>About:</strong> {{ trainer.about }}</p>
+
+<h2>Reviews</h2>
+<ul>
+    {% for review in reviews %}
+    <li>{{ review.reviewer_name }} ({{ review.rating }}/5): {{ review.comment }}</li>
+    {% endfor %}
+</ul>
+
+<h2>Add a Review</h2>
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Submit</button>
+</form>
